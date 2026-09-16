@@ -5,8 +5,9 @@ const quotes = ["That's powerful", "That's a shame"];
 document.getElementById("ATH1").textContent = "Atwill Simulator";
 document.getElementById("ATP").textContent = "WARNING: This webpage is not fully functional yet.";
 document.getElementById("Name").textContent = "Username: ";
-document.getElementById("AtwillQuote").textContent = "Mr Atwill"
-document.getElementById("AtwillImage").width = "200";
+document.getElementById("AtwillQuote").textContent = "Mr Atwill's Wise Words"
+document.getElementById("AtwillImage").textContent = "No Atwill Yet 😭";
+
 
 document.getElementById("UsernameButton").onclick = function(){
     username = document.getElementById("Text1").value;
