@@ -11,7 +11,7 @@ document.getElementById("AtwillImage").width = "200";
 document.getElementById("UsernameButton").onclick = function(){
     username = document.getElementById("Text1").value;
     if (username == "lansdown") {
-        window.alert("ERROR: Username unavaliable")
+        window.alert("ERROR: Username unavailable")
     } else {
         if (username == "landsdown") {
             window.alert("ERROR: Username unavaliable")
