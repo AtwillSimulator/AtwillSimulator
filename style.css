@@ -1,0 +1,11 @@
+body{
+    font-family: Century;
+    font-size: 1em
+}
+
+.fixed-bottom-right { 
+  position: fixed; 
+  right: 16px;   /* distance from right edge */ 
+  bottom: 16px;  /* distance from bottom edge */ 
+  z-index: 1000; /* optional, keep on top */ 
+} 
