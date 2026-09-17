@@ -1,7 +1,14 @@
 body{
+    background-color: lightblue;
     font-family: Century;
     font-size: 1em
 }
+
+h1 {
+  font-family: monospace;
+  font-size: 40px
+}
+
 
 .fixed-bottom-right { 
   position: fixed; 
