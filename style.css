@@ -1,0 +1,42 @@
+body{
+    background-color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px
+}
+
+
+.fixed-bottom-right { 
+  position: fixed; 
+  right: 16px;   /* distance from right edge */ 
+  bottom: 16px;  /* distance from bottom edge */ 
+  z-index: 1000; /* optional, keep on top */ 
+} 
+
+.fixed-top-right { 
+  position: fixed; 
+  right: 16px;   /* distance from right edge */ 
+  top: 16px;  /* distance from bottom edge */ 
+  z-index: 1000; /* optional, keep on top */ 
+} 
+
+.almost-top-right { 
+  position: fixed; 
+  right: 16px;   /* distance from right edge */ 
+  top: 32px;  /* distance from bottom edge */ 
+  z-index: 1000; /* optional, keep on top */ 
+} 
+
+
+p {
+  color: white;
+  font-family: 'Times New Roman', Times, serif
+}
+
+.click-counter {
+  color: black
+}
