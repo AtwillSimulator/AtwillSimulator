@@ -1,6 +1,6 @@
 let score = Number(localStorage.getItem("score")) || 0;
-let leastClicks = Number(localStorage.getItem("leastClicks")) || 117;
-let username = localStorage.getItem("username");
+let leastClicks = Number(localStorage.getItem("leastClicks"));
+let username = localStorage.getItem("username") || "";
 let currentQuote;
 let countdown = 5;
 let currentQuoteNum;
@@ -27,7 +27,10 @@ let quotes = ["That's powerful", "That's powerful", "Mana", "REF", "Save, Axyl",
 
 const usernameErrors = {
     "atwill": "ERROR: Username taken by Atwill",
-    "lansdown": "ERROR: Username taken by developer",
+    "lansdown": "ERROR: Username taken by developer"
+};
+
+const usernameRemarks = {
     "harry": "Hey, that's me!",
     "harry sleigh": "How do you know my full name???",
     "sleigh": "[Minecraft music plays]",
@@ -48,6 +51,7 @@ document.getElementById("AtwillQuote").textContent = "Mr Atwill's Wise Words";
 document.getElementById("AtwillImage").width = "200";
 document.getElementById("click-counter").textContent = "Count: 0"
 document.getElementById("total-clicks-display").textContent = "Total Quotes Clicked: " + totalClicks;
+document.getElementById("leastClicksDisplay").textContent = "Least clicks: " + leastClicks;
 document.getElementById("scoreDisplay").textContent = "Score: " + score;
 document.getElementById("Name").textContent = "Username: " + username;
 
@@ -73,6 +77,9 @@ document.getElementById("UsernameButton").onclick = function(){
         quotes = [getOut, getOut, getOut, getOut, getOut, getOut, getOut, getOut, getOut, getOut, countdown, getOut, getOut, getOut, getOut];
 
     } else {
+        if (usernameAttempt.value.toLowerCase() in usernameRemarks) {
+            window.alert(usernameRemarks[usernameAttempt.value.toLowerCase()])
+        }
         username = document.getElementById("Text1").value;
         localStorage.setItem("username", username);
         document.getElementById("Name").textContent = "Username: " + username;
@@ -87,7 +94,15 @@ document.getElementById("QuoteButton").onclick = function(){
             if (!(gameOver)) {
                 
                 window.alert("Congratulations! You have beaten Atwill Simulator!");
-        
+
+                if (leastClicks == 0) {
+                    leastClicks = clicks
+                } else if (leastClicks > clicks) {
+                    leastClicks = clicks
+                }
+
+                localStorage.setItem("leastClicks", leastClicks);
+
                 score = Number(score) + 1;
                 localStorage.setItem("score", score);
                 document.getElementById("scoreDisplay").textContent = "Score: " + score;

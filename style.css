@@ -40,3 +40,11 @@ p {
 .click-counter {
   color: black
 }
+
+#leastClicksDisplay {
+  font-style: italic;
+  position: fixed; 
+  right: 16px; 
+  top: 48px;
+  z-index: 1000;
+}
