@@ -49,6 +49,7 @@ document.getElementById("ATH1").textContent = "Atwill Simulator";
 document.getElementById("ATP").textContent = "5 seconds silence before you can leave.";
 document.getElementById("AtwillQuote").textContent = "Mr Atwill's Wise Words";
 document.getElementById("AtwillImage").width = "200";
+document.getElementById("BlueForm").width = "100";
 document.getElementById("click-counter").textContent = "Count: 0"
 document.getElementById("total-clicks-display").textContent = "Total Quotes Clicked: " + totalClicks;
 document.getElementById("leastClicksDisplay").textContent = "Least clicks: " + leastClicks;
@@ -117,7 +118,7 @@ document.getElementById("QuoteButton").onclick = function(){
         window.alert("That's a shame. You have been sent out of class!");
         outOfClass = true;
         if (outOfClass)
-        document.getElementById("BlueForm").textContent = "Fill out blue form"
+        document.getElementById("BlueForm").hidden = false;
     } else {
         currentQuoteNum = Math.floor(Math.random() * quotes.length);
         currentQuote = quotes[currentQuoteNum];
@@ -143,20 +144,15 @@ document.getElementById("QuoteButton").onclick = function(){
 
 
 
-if (outOfClass)
-    document.getElementById("BlueForm").textContent = "Fill out blue form"
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    const blueFormButton = document.getElementById("BlueForm")
-})
 
 
 document.getElementById("BlueForm").onclick = function(){
     if (outOfClass) {
         window.alert("Ok, get back in class now");
         outOfClass = false;
-        document.getElementById("BlueForm").textContent = "";
+        
         currentQuoteNum = Math.floor(Math.random() * quotes.length);
         currentQuote = quotes[currentQuoteNum];
         document.getElementById("AtwillQuote").textContent = `"` + currentQuote + `"` + `\n- Mr Atwill`;
@@ -167,6 +163,6 @@ document.getElementById("BlueForm").onclick = function(){
         localStorage.setItem("total clicks", totalClicks);
 
         document.getElementById("click-counter").textContent = "Count: " + clicks
-
+        document.getElementById("BlueForm").hidden = true;
     }
 }

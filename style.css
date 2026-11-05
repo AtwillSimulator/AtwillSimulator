@@ -48,3 +48,8 @@ p {
   top: 48px;
   z-index: 1000;
 }
+
+#BlueForm {
+  right: 16 px;
+  top: 100px
+}
